@@ -1,2 +1,2 @@
 # DJ
-Training project
+Training project using Pug, less, Webpack, Native JS
