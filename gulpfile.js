@@ -102,10 +102,17 @@ exports.grid = grid;
 // Build final bundle from pug, less, js
 exports.build = parallel(html, css);
 // Watch changes from pug, less, js
-exports.watch = series(html, css,
+exports.watch = series(parallel(html, css), livereload,
     function() {
-      watch(config.root + config.pug.watch, html);
+      watch(config.root + config.pug.watch, series(html, function(done) {
+        browserSync.reload();
+
+        done();
+      }));
+
+      watch(config.root + config.css.watch, series(css, function(done) {
+        browserSync.reload();
+
+        done();
+      }));
     });
-
-
-// {ignoreInitial: false}
