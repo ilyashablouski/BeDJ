@@ -1,79 +1,119 @@
-/* eslint-disable linebreak-style */
-const gulp = require('gulp');
+// Plugins
+const {
+  parallel,
+  series,
+  watch,
+  src,
+  dest,
+} = require('gulp');
+const pug = require('gulp-pug');
 const less = require('gulp-less');
+const gcmq = require('gulp-group-css-media-queries');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
-const gcmq = require('gulp-group-css-media-queries');
 const smartgrid = require('smart-grid');
+const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
 
+// Globs
 const config = {
-  root: './src/',
-  html: {
-    src: 'index.html',
+  root: './dev/',
+  pug: {
+    src: 'pug/+(index).pug',
+    watch: 'pug/**/*.pug',
+    dest: './prod',
   },
   css: {
-    watch: 'less/**/*.less',
     src: 'less/+(styles).less',
-    dest: 'css',
+    watch: 'less/**/*.less',
+    dest: './prod/css',
   },
-  js: {
-    dev: 'js/dev/**/*.js',
-    src: 'js/+(common).js',
-    prod: 'js/prod/',
-  },
+  // js: {
+  //   src: 'js/+(common).js',
+  //   watch: 'js/**/*.js',
+  //   prod: 'js/prod/',
+  // },
 };
 
-gulp.task('build', function(done) {
-  gulp.src(config.root + config.css.src)
+/**
+ * Compile pug to html
+ *
+ * @return {string} Return file's paths
+ */
+function html() {
+  return src(config.root + config.pug.src)
+      .pipe(pug({
+        pretty: true,
+      }))
+      .pipe(dest(config.pug.dest));
+}
+
+/**
+ * Compile less to css
+ *
+ * @return {string} Return file's paths
+ */
+function css() {
+  return src(config.root + config.css.src)
       .pipe(less())
       .pipe(gcmq())
+      .pipe(dest(config.css.dest))
       .pipe(autoprefixer({
-        browsers: ['> 0.1%'],
-        cascade: false,
+        browsers: ['last 2 versions'],
       }))
       .pipe(cleanCSS({
         level: 2,
       }))
-      .pipe(gulp.dest(config.root + config.css.dest))
-      .pipe(browserSync.reload({
-        stream: true,
-      }));
+      .pipe(rename({
+        extname: '.min.css',
+      }))
+      .pipe(dest(config.css.dest));
+}
 
-  done();
-});
-
-gulp.task('browserSync', function(done) {
-  browserSync.init({
-    server: {
-      baseDir: config.root,
-    },
-  });
-
-  done();
-});
-
-gulp.task('watch', gulp.series('browserSync', function() {
-  gulp.watch(config.root + config.css.watch, gulp.parallel('build'));
-  gulp.watch(config.root + config.html.src, gulp.parallel(function(done) {
-    browserSync.reload();
-
-    done();
-  }));
-
-  gulp.watch(config.root + config.js.src, gulp.parallel(function(done) {
-    browserSync.reload();
-
-    done();
-  }));
-}));
-
-gulp.task('grid', function(done) {
+/**
+ * Initialize smart-grid library
+ *
+ * @param {*} done End async function
+ */
+function grid(done) {
   smartgrid('dev/less', {
     container: {
-      maxWidth: '1170px',
+      maxWidth: '???',
+    },
+  });
+  done();
+}
+
+/**
+ * Initialize live reload
+ *
+ * @param {*} done End async function
+ */
+function livereload(done) {
+  browserSync.init({
+    server: {
+      baseDir: './prod/',
     },
   });
 
   done();
-});
+}
+
+/**
+ * Task's assignment
+ */
+exports.html = html;
+exports.css = css;
+exports.grid = grid;
+// Build final bundle from pug, less, js
+exports.build = parallel(html, css);
+// Watch changes from pug, less, js
+exports.watch = series(html, css);
+// function(done) {
+// watch(config.pug.watch, html);
+
+//   done();
+// });
+
+
+// {ignoreInitial: false}

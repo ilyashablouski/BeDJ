@@ -1,0 +1,16 @@
+header
+  .header
+    ul.nav
+      -
+        var links = [
+          {link: '#', text: 'link'},
+          {link: '#2', text: 'link222'},
+          {link: '#3', text: 'link333'},
+          {class: 'red', type: 'text'},
+        ]
+      each obj in links
+        if obj.class 
+          input(class=obj.class type=obj.type)
+        else
+          li 
+            a(href=obj.link).nav-link=obj.text

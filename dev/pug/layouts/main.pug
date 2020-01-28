@@ -1,0 +1,11 @@
+include ../modules/mixins.pug
+block variables
+
+doctype html
+html(lang='en')
+  head
+    title= pageTitle
+  body
+    include ../modules/header.pug
+    block content
+    block scripts
