@@ -1,11 +1,5 @@
 // Plugins
-const {
-  parallel,
-  series,
-  watch,
-  src,
-  dest,
-} = require('gulp');
+const {parallel, series, watch, src, dest} = require('gulp');
 const pug = require('gulp-pug');
 const less = require('gulp-less');
 const gcmq = require('gulp-group-css-media-queries');
@@ -108,12 +102,10 @@ exports.grid = grid;
 // Build final bundle from pug, less, js
 exports.build = parallel(html, css);
 // Watch changes from pug, less, js
-exports.watch = series(html, css);
-// function(done) {
-// watch(config.pug.watch, html);
-
-//   done();
-// });
+exports.watch = series(html, css,
+    function() {
+      watch(config.root + config.pug.watch, html);
+    });
 
 
 // {ignoreInitial: false}
