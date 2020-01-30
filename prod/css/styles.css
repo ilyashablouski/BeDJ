@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/Helvetica.eot");
+  src: url("../fonts/Helvetica/Helvetica.woff2") format("woff2"), url("../fonts/Helvetica/Helvetica.woff") format("woff"), url("../fonts/Helvetica/Helvetica.ttf") format("truetype"), url("../fonts/Helvetica/Helvetica.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PostNoBillsJaffna";
+  src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.eot");
+  src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff2") format("woff2"), url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff") format("woff"), url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.ttf") format("truetype"), url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 button,
 input[type="search"],
 input[type="tel"],
