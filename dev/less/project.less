@@ -1,14 +1,28 @@
-//variables
+// Variables
+@black: #080808;
+@blackLight: #131212;
+@white: #FFFFFF;
+@grey: #2A2A2A;
+@greyText: #C4C4C4;
+@whiteText: rgba(255, 255, 255, 0.8);
 
-//mixins
+// Mixins
 .ie11(@content) {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      @content();
+    @content();
   }
 }
 
 .ie10(@content) {
-  @media screen and (min-width:0\0) {
-      @content();
+  @media screen and (min-width: 0\0
+  ) {
+    @content();
+  }
+}
+
+// Media breakpoint 450px
+.xxs-block(@content) {
+  @media screen and (max-width: 375px) {
+    @content();
   }
 }

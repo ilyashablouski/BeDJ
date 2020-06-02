@@ -1,25 +1,19 @@
 extends layouts/main.pug
 
 block variables
-  - var youAreUsingPug = true;
-  - var pageTitle = 'BeDJ';
-  - var scriptSrc = 'js/script.js';
-  - var link = 'css/styles.css';
+    - var pageTitle = 'BeDj';
+    - var scriptSrc = 'js/common.mjs';
+    - var linkCss = 'css/styles.css';
+    - var linkMinCss = 'css/styles.min.css';
+
+block meta
+    //<meta property="og:image" content="favicons/favicon-196x196.png">
+    //<meta property="og:title" content="Сиб-сервис">
+    //<meta property="og:description" content="Элекстроинструмент, техника, инструмент.">
+    //<meta property="og:type" content="website">
+    //<meta property="og:url" content="/">
+    //<link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/">
 
 block content
-  h1.header Pug - node template engine
-  #container.col
-    if youAreUsingPug
-      p You are amazing
-    else
-      p(class = pageTitle) Get on it!
-    p.
-      Pug is a terse and simple templating language with a
-      strong focus on performance and powerful features.
-    p Звоните по телефону #[a(href='' class='123') 123-123]
-    p Звоните по телефону 
-      |
-      | #[a(href='' class='123') 123-123]
+    .content
 
-block scripts
-  script(src=scriptSrc)

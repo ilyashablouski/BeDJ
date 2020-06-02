@@ -52,8 +52,9 @@ function css() {
       .pipe(less())
       .pipe(gcmq())
       .pipe(dest(config.css.dest))
+      .pipe(browserSync.stream())
       .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
+        overrideBrowserslist: ['last 2 versions'],
       }))
       .pipe(cleanCSS({
         level: 2,
@@ -72,7 +73,7 @@ function css() {
 function grid(done) {
   smartgrid('dev/less', {
     container: {
-      maxWidth: '???',
+      maxWidth: '1440px',
     },
   });
   done();
@@ -110,9 +111,5 @@ exports.watch = series(parallel(html, css), livereload,
         done();
       }));
 
-      watch(config.root + config.css.watch, series(css, function(done) {
-        browserSync.reload();
-
-        done();
-      }));
+      watch(config.root + config.css.watch, css);
     });

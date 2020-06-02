@@ -1,2 +1,83 @@
+//-
+  Create list items 
+  listItem(text: str, className: str)
 
+mixin listItem(className, text)
+  a(class= className, href='#') #{text}
 
+  //-
+    Create product block
+    product(blocksQuantity: num)
+
+mixin productBlock(blocksQuantity)
+  - var startNumber = 1;
+    while startNumber <= blocksQuantity
+      .product-block.tab__product-block
+        .product-block__inner
+          .product-block__image
+            img(src='images/prod-img.jpg', alt='')
+          a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+
+        .product-block__inner  
+          span.product-block__stock В&nbsp;наличии         
+          //- Price container with counters
+          .product-price-container
+            //- Price
+            .product-price-item
+              span.product-price-item__price цена
+              .product-price-item__inner
+                span.product-price-item__cost 120.17
+                //- Product counter 
+                form.counter.counter_md(action='#', name='counter-below')
+                  button.button.button-minus.button_md
+                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_md
+
+            //- Price
+            .product-price-item
+              span.product-price-item__price цена&nbsp;2
+              .product-price-item__inner
+                span.product-price-item__cost 40.15
+                //- Product counter 
+                form.counter.counter_md(action='#', name='counter-below')
+                  button.button.button-minus.button_md
+                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_md
+
+        - startNumber++
+
+//-
+  Create table item: row + data
+  tableItem(tableDataArray: array)
+
+mixin createTableItem(tableDataArray)
+  each obj, key in tableDataArray
+    tr.scheme-table__item(class=obj.class)
+      td.scheme-table__number= obj.number
+      td.scheme-table__article= obj.article
+      td.scheme-table__name
+        .scheme-table__inner= obj.name
+      td.scheme-table__dropdown
+        i.min-photo
+          <svg class="photo-icon pop-up-js">
+          <use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+          </svg>
+        .pop-up.pop-up-js.pop-up-js-window
+          img.pop-up__img(src='images/popup-img.jpg', alt='Pop-up image')
+        if obj.dropdown
+          .scheme-table__dropdown-inner
+            a.scheme-table__dropdown-link(href='#')= obj.dropdown
+            i.triangle.triangle_sm
+      td.scheme-table__storage
+        span= obj.storage
+      td.scheme-table__price
+        if obj.price === true
+          span.scheme-table__price-value.scheme-table__price-value_blue 3.99
+        else
+          span.scheme-table__price-value.is-no-available нет<br>в&nbsp;наличии
+      td.scheme-table__counter
+        //- Product counter
+        form.counter.counter_sm(action='#', name='counter-below')
+          button.button.button-minus.button_sm.button-minus_sm
+          input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
+          button.button.button-plus.button_sm.button-plus_sm
