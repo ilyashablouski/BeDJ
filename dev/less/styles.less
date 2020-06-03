@@ -9,11 +9,9 @@
 // Fonts
 @font-face {
   font-family: "Helvetica";
-  src: url("../fonts/Helvetica/Helvetica.eot");
   src: url("../fonts/Helvetica/Helvetica.woff2") format("woff2"),
-  url("../fonts/Helvetica/Helvetica.woff") format("woff"),
-  url("../fonts/Helvetica/Helvetica.ttf") format("truetype"),
-  url("../fonts/Helvetica/Helvetica.eot?#iefix") format("embedded-opentype");
+    url("../fonts/Helvetica/Helvetica.woff") format("woff");
+
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -21,12 +19,18 @@
 
 @font-face {
   font-family: "PostNoBillsJaffna";
-  src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.eot");
   src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff2") format("woff2"),
-  url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff") format("woff"),
-  url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.ttf") format("truetype"),
-  url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.eot?#iefix") format("embedded-opentype");
+    url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PostNoBillsJaffna";
+  src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-Medium.woff2") format("woff2"),
+    url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -77,10 +81,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-size: 1.6rem;
-  line-height: 2.7rem;
+  line-height: 1.7rem;
   background: @grey;
   color: @whiteText;
-
 }
 
 .content {
@@ -131,22 +134,26 @@ input[type="submit"] textarea {
 
 ::-webkit-input-placeholder {
   /* WebKit browsers */
-  color: #ffffff;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #ffffff;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: #ffffff;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10+ */
-  color: #ffffff;
+  color: rgba(221, 221, 221, 0.8);
+  ;
 }
 
 input[type=text]::-ms-clear {
@@ -174,9 +181,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 img {
-  .ie10({
-    width: 100%;
-  }
+  .ie10( {
+      width: 100%;
+    }
+
   );
 }
 
@@ -186,15 +194,17 @@ a {
   transition: .2s;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-size: 4.8rem;
   font-weight: 600;
   color: @whiteText;
 }
 
-h2, .h2 {
-  font-family: "PostNoBillsJaffna", Arial, sans-serif;;
+h2,
+.h2 {
+  font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-size: 24px;
   color: @whiteText;
 }
@@ -205,3 +215,158 @@ h2, .h2 {
   color: @whiteText;
 }
 
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 6px 0;
+  border-color: #fff transparent transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.header {
+  height: 53px;
+  background: @black;
+
+  .triangle {
+    margin-left: 2px;
+  }
+
+  &__inner {
+    .wrapper();
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    margin-left: 4rem;
+  }
+
+  &__nav {
+    margin-left: 4.9rem;
+    margin-right: 1.5rem;
+  }
+
+  &__search-form {
+    margin-left: 1.5rem;
+    margin-right: 2.8rem;
+  }
+
+  &__item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__user {
+    margin-left: 1.4rem;
+  }
+}
+
+.nav {
+  &__item {
+    display: inline-block;
+    margin-right: 1.8rem;
+
+    &:first-child {
+      &:after {
+
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: @white;
+  }
+}
+
+.button {
+  padding: 7px 20px;
+  display: inline-block;
+  border: 0.7px solid #FFD707;
+  border-radius: 9px;
+
+  &_transpt {
+    background: transparent;
+  }
+}
+
+.search-form {
+  position: relative;
+  flex: 0 0 20.8%;
+  max-width: 20.8%;
+
+  &__input {
+    padding-left: 2.1rem;
+    padding-right: 3.5rem;
+    border: 0.7px solid #FFFFFF;
+    border-radius: 8px;
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    color: rgba(221, 221, 221, 0.5);
+    font-size: 1.4rem !important;
+  }
+
+  &__button {
+    position: absolute;
+    top: 17.5px;
+    right: 12px;
+    transform: translateY(-50%);
+    background: transparent;
+  }
+}
+
+.tip-button {
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  line-height: 24px;
+  color: @white;
+  background: transparent;
+  border: 2px solid #B8B8B8;
+  border-radius: 50%;
+}
+
+.user {
+  position: relative;
+  &__link {
+    padding: 12px 15px;
+    display: table;
+    background: @black;
+    color: @white;
+
+    &_dropdown {
+      position: absolute;
+      min-width: 121px;
+      font-family: "PostNoBillsJaffna", Arial, sans-serif;
+      font-weight: 500;
+    }
+  }
+
+  &__icon {
+    &_headphone {
+      position: relative;
+      top: 4px;
+      display: inline-block;
+      width: 21px;
+      height: 29px;
+      background: url('../images/headphones@1.5x.png') no-repeat center center;
+      background-size: cover;
+    }
+  }
+
+  &__text {
+    padding-left: 9px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2rem;
+    overflow: hidden;
+  }
+}

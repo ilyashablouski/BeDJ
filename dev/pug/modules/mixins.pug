@@ -1,5 +1,5 @@
 //-
-  Create list items 
+  Create list items
   listItem(text: str, className: str)
 
 mixin listItem(className, text)
@@ -12,39 +12,39 @@ mixin listItem(className, text)
 mixin productBlock(blocksQuantity)
   - var startNumber = 1;
     while startNumber <= blocksQuantity
-      .product-block.tab__product-block
-        .product-block__inner
-          .product-block__image
-            img(src='images/prod-img.jpg', alt='')
-          a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+    .product-block.tab__product-block
+      .product-block__inner
+        .product-block__image
+          img(src='images/prod-img.jpg', alt='')
+        a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
 
-        .product-block__inner  
-          span.product-block__stock В&nbsp;наличии         
-          //- Price container with counters
-          .product-price-container
-            //- Price
-            .product-price-item
-              span.product-price-item__price цена
-              .product-price-item__inner
-                span.product-price-item__cost 120.17
-                //- Product counter 
-                form.counter.counter_md(action='#', name='counter-below')
-                  button.button.button-minus.button_md
-                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.button_md
+      .product-block__inner
+        span.product-block__stock В&nbsp;наличии
+        //- Price container with counters
+        .product-price-container
+          //- Price
+          .product-price-item
+            span.product-price-item__price цена
+            .product-price-item__inner
+              span.product-price-item__cost 120.17
+              //- Product counter
+              form.counter.counter_md(action='#', name='counter-below')
+                button.button.button-minus.button_md
+                input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                button.button.button-plus.button_md
 
-            //- Price
-            .product-price-item
-              span.product-price-item__price цена&nbsp;2
-              .product-price-item__inner
-                span.product-price-item__cost 40.15
-                //- Product counter 
-                form.counter.counter_md(action='#', name='counter-below')
-                  button.button.button-minus.button_md
-                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.button_md
+          //- Price
+          .product-price-item
+            span.product-price-item__price цена&nbsp;2
+            .product-price-item__inner
+              span.product-price-item__cost 40.15
+              //- Product counter
+              form.counter.counter_md(action='#', name='counter-below')
+                button.button.button-minus.button_md
+                input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                button.button.button-plus.button_md
 
-        - startNumber++
+      - startNumber++
 
 //-
   Create table item: row + data
@@ -81,3 +81,15 @@ mixin createTableItem(tableDataArray)
           button.button.button-minus.button_sm.button-minus_sm
           input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
           button.button.button-plus.button_sm.button-plus_sm
+
+
+//-
+  Create nav item
+  navItem(text: str, link: str)
+
+mixin navItem(text, link, category)
+  .nav__item
+    a.nav__link(href= link) #{text}
+    if (category===true)
+      i.triangle
+
