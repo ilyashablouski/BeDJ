@@ -1,19 +1,41 @@
 extends layouts/main.pug
 
 block variables
-    - var pageTitle = 'BeDj';
-    - var scriptSrc = 'js/common.mjs';
-    - var linkCss = 'css/styles.css';
-    - var linkMinCss = 'css/styles.min.css';
+  - var pageTitle = 'BeDj';
+  - var scriptSrc = 'js/common.mjs';
+  - var linkCss = 'css/styles.css';
+  - var linkMinCss = 'css/styles.min.css';
+  -
+    var tableDataArray = [
+      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '500$', profit: '470$', time: '15', total: '2 470$', status: true},
+      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '600$', profit: '560$', time: '56', total: '3 560$', status: true},
+      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '550$', profit: '510$', time: '34', total: '1 510$', status: true},
+      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '700$', profit: '650$', time: '18', total: '1 650$', status: true},
+      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '200$', profit: '180$', time: '19', total: '2 180$', status: true},
+      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '450$', profit: '410$', time: '25', total: '3 410$', status: false},
+      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '500$', profit: '470$', time: '15', total: '2 470$', status: false},
+      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '300$', profit: '270$', time: '25', total: '2 270$', status: false},
+    ];
 
 block meta
-    //<meta property="og:image" content="favicons/favicon-196x196.png">
-    //<meta property="og:title" content="Сиб-сервис">
-    //<meta property="og:description" content="Элекстроинструмент, техника, инструмент.">
-    //<meta property="og:type" content="website">
-    //<meta property="og:url" content="/">
-    //<link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/">
+  //<meta property="og:image" content="favicons/favicon-196x196.png">
+  //<meta property="og:title" content="Сиб-сервис">
+  //<meta property="og:description" content="Элекстроинструмент, техника, инструмент.">
+  //<meta property="og:type" content="website">
+  //<meta property="og:url" content="/">
+  //<link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/">
 
 block content
-
-
+  main.content
+    .content__inner
+      h1.h1.content__h1 Sales
+      p.text On this page you can track homework sales and money from them for a specific period of time
+      table.table
+        tr.table__row
+          th.table__header Homework
+          th.table__header Initial cost
+          th.table__header Profit per unit
+          th.table__header Times sold
+          th.table__header Total profit
+          th.table__header Status
+        +createTableItem(tableDataArray)
