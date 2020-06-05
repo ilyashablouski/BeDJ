@@ -413,8 +413,8 @@ h2,
 
 .search-form {
   position: relative;
-  flex: 0 0 20.8%;
-  max-width: 20.8%;
+  flex: 0 0 21.1%;
+  max-width: 21.1%;
 }
 
 .search-form__input {
@@ -710,6 +710,10 @@ h2,
 .payment {
   text-align: center;
   text-transform: uppercase;
+}
+
+.payment__title {
+  margin-bottom: 5px;
 }
 
 .payment__icon {
