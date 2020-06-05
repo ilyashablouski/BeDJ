@@ -293,7 +293,7 @@ input[type="number"]::-webkit-inner-spin-button {
 a {
   text-decoration: none;
   color: #FFD707;
-  transition: 0.2s;
+  transition: all 0.2s;
 }
 
 h1,
@@ -334,7 +334,6 @@ h2,
 **/
 
 .header {
-  height: 53px;
   background: #080808;
 }
 
@@ -347,13 +346,11 @@ h2,
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
+  padding: 0 4rem;
+  height: 53px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__logo {
-  margin-left: 4rem;
 }
 
 .header__nav {
@@ -441,31 +438,32 @@ h2,
 }
 
 .user__link {
-  padding: 12px 15px;
-  display: table;
+  padding: 0 15px;
+  height: 53px;
+  display: flex;
+  align-items: center;
   background: #080808;
   color: #FFFFFF;
 }
 
 .user__link_dropdown {
   position: absolute;
-  min-width: 121px;
+  min-width: 119.25px;
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-weight: 500;
+}
+
+.user__link_dropdown .user__text {
+  padding-left: 10px;
 }
 
 .user__icon_headphone {
   position: relative;
   top: 4px;
-  display: inline-block;
-  width: 21px;
-  height: 29px;
-  background: url('../images/headphones@1.5x.png') no-repeat center center;
-  background-size: cover;
+  left: -5px;
 }
 
 .user__text {
-  padding-left: 9px;
   display: table-cell;
   vertical-align: middle;
   font-size: 2rem;
@@ -481,6 +479,7 @@ h2,
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
+  padding: 0;
   display: flex;
   width: 100%;
 }
@@ -559,12 +558,23 @@ h2,
 }
 
 .table {
-  width: 93.6%;
+  width: 87.98%;
 }
 
 .table__row {
   margin-bottom: 13px;
   display: flex;
+}
+
+.table__row:last-child {
+  border: none;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.table__row:last-child td:last-child {
+  display: none;
 }
 
 .table__header {
@@ -630,6 +640,120 @@ h2,
 
 /*
  * ! 3. ! Content
+**/
+
+/*
+ * 4. Footer
+**/
+
+.footer__inner {
+  margin-top: 30rem;
+  margin-left: 22px;
+  padding-top: 3.2rem;
+  padding-bottom: 6rem;
+  border-top: 1px solid #B2B2B2;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.footer__item {
+  word-wrap: break-word;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.footer__item:nth-child(1) {
+  display: flex;
+  padding-left: 35px;
+}
+
+.footer__logo {
+  margin-right: 3.4rem;
+}
+
+.footer__copyright {
+  padding-left: 22px;
+}
+
+.feedback-info {
+  text-align: center;
+}
+
+.feedback-info span {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feedback-info span:last-child {
+  display: inline-block;
+  border-bottom: 0.5px solid #D4D4D4;
+}
+
+.feedback-info span a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.social-block {
+  display: block;
+}
+
+.social-block__item {
+  display: inline-block;
+}
+
+.social-block__item:not(:last-child) {
+  margin-right: 2.7rem;
+}
+
+.social-block__title {
+  margin-bottom: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.social-block__inner {
+  font-size: 0;
+  text-align: center;
+}
+
+.payment {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.payment__icon {
+  display: inline-block;
+}
+
+.payment__icon_visa {
+  margin-right: 20px;
+}
+
+.copyright {
+  height: 31px;
+  line-height: 31px;
+  background: #131212;
+  text-align: center;
+  font-size: 14px;
+}
+
+.copyright span {
+  margin-right: 13px;
+  position: relative;
+  top: 2px;
+  font-size: 20px;
+}
+
+/*
+ * ! 4. Footer
 **/
 
 @media screen and (min-width: 0 \0) {

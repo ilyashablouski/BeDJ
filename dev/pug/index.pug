@@ -15,6 +15,7 @@ block variables
       {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '450$', profit: '410$', time: '25', total: '3 410$', status: false},
       {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '500$', profit: '470$', time: '15', total: '2 470$', status: false},
       {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '300$', profit: '270$', time: '25', total: '2 270$', status: false},
+      {name: 'Left to pay', cost: '', profit: '', time: '225', total: '20 300$'}
     ];
 
 block meta
@@ -39,3 +40,4 @@ block content
           th.table__header Total profit
           th.table__header Status
         +createTableItem(tableDataArray)
+    include modules/footer.pug

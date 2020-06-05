@@ -202,7 +202,7 @@ img {
 a {
   text-decoration: none;
   color: #FFD707;
-  transition: .2s;
+  transition: all .2s;
 }
 
 h1,
@@ -242,7 +242,6 @@ h2,
  * 1. Header
 **/
 .header {
-  height: 53px;
   background: @black;
 
   .triangle {
@@ -252,13 +251,11 @@ h2,
   &__inner {
     .wrapper();
 
+    padding: 0 4rem;
+    height: 53px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &__logo {
-    margin-left: 4rem;
   }
 
   &__nav {
@@ -348,16 +345,22 @@ h2,
   position: relative;
 
   &__link {
-    padding: 12px 15px;
-    display: table;
+    padding: 0 15px;
+    height: 53px;
+    display: flex;
+    align-items: center;
     background: @black;
     color: @white;
 
     &_dropdown {
       position: absolute;
-      min-width: 121px;
+      min-width: 119.25px;
       font-family: "PostNoBillsJaffna", Arial, sans-serif;
       font-weight: 500;
+
+      .user__text {
+        padding-left: 10px;
+      }
     }
   }
 
@@ -365,16 +368,11 @@ h2,
     &_headphone {
       position: relative;
       top: 4px;
-      display: inline-block;
-      width: 21px;
-      height: 29px;
-      background: url('../images/headphones@1.5x.png') no-repeat center center;
-      background-size: cover;
+      left: -5px;
     }
   }
 
   &__text {
-    padding-left: 9px;
     display: table-cell;
     vertical-align: middle;
     font-size: 2rem;
@@ -389,6 +387,7 @@ h2,
 .container {
   .wrapper();
 
+  padding: 0;
   display: flex;
   width: 100%;
 }
@@ -436,6 +435,7 @@ h2,
 .is-paid {
   color: #77C628 !important;
 }
+
 .content {
   flex: 0 0 82.64%;
   max-width: 82.64%;
@@ -461,10 +461,22 @@ h2,
 }
 
 .table {
-  width: 93.6%;
+  width: 87.98%;
+
   &__row {
     margin-bottom: 13px;
     display: flex;
+
+    &:last-child {
+      border: none;
+      font-family: "Helvetica", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+
+      td:last-child {
+        display: none;
+      }
+    }
   }
 
   &__header {
@@ -500,6 +512,7 @@ h2,
   &__data {
     text-align: center;
     color: @greyText;
+
     &:nth-child(1) {
       padding-left: 20px;
       width: 45%;
@@ -530,4 +543,113 @@ h2,
 
 /*
  * ! 3. ! Content
+**/
+
+/*
+ * 4. Footer
+**/
+.footer {
+  &__inner {
+    margin-top: 30rem;
+    margin-left: 22px;
+    padding-top: 3.2rem;
+    padding-bottom: 6rem;
+    border-top: 1px solid #B2B2B2;
+  }
+
+  &__top {
+    .row-flex();
+  }
+
+  &__item {
+    .col-padding();
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+
+    &:nth-child(1) {
+      display: flex;
+      padding-left: 35px;
+    }
+  }
+
+  &__logo {
+    margin-right: 3.4rem;
+  }
+
+  &__copyright {
+    padding-left: 22px;
+
+  }
+}
+
+.feedback-info {
+  text-align: center;
+
+  span {
+    display: block;
+    margin-bottom: 15px;
+
+    &:last-child {
+      display: inline-block;
+      border-bottom: 0.5px solid #D4D4D4;
+    }
+
+    a {
+      color: @whiteText;
+    }
+  }
+}
+
+.social-block {
+  display: block;
+  &__item {
+    display: inline-block;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 2.7rem;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__inner {
+    font-size: 0;
+    text-align: center;
+  }
+}
+
+.payment {
+  text-align: center;
+  text-transform: uppercase;
+
+  &__icon {
+    display: inline-block;
+
+    &_visa {
+      margin-right: 20px;
+    }
+  }
+}
+
+.copyright {
+  height: 31px;
+  line-height: 31px;
+  background: @blackLight;
+  text-align: center;
+  font-size: 14px;
+
+  span {
+    margin-right: 13px;
+    position: relative;
+    top: 2px;
+    font-size: 20px;
+  }
+}
+/*
+ * ! 4. Footer
 **/
