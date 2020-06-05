@@ -112,6 +112,14 @@ img {
 
 @font-face {
   font-family: "Helvetica";
+  src: url("../fonts/Helvetica/HelveticaLight.woff2") format("woff2"), url("../fonts/Helvetica/HelveticaLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
   src: url("../fonts/Helvetica/HelveticaRegular.woff2") format("woff2"), url("../fonts/Helvetica/HelveticaRegular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -120,8 +128,8 @@ img {
 
 @font-face {
   font-family: "Helvetica";
-  src: url("../fonts/Helvetica/HelveticaBold.woff2") format("woff2"), url("../fonts/Helvetica/HelveticaBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Helvetica/HelveticaMedium.woff2") format("woff2"), url("../fonts/Helvetica/HelveticaMedium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -175,7 +183,7 @@ body {
 
 body {
   font-family: "Helvetica", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
@@ -300,21 +308,22 @@ h1,
 .h1 {
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-size: 4.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
 
 h2,
 .h2 {
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .text {
   font-family: "Helvetica", Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 300;
   line-height: 1.7rem;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -372,6 +381,10 @@ h2,
   margin-left: 1.4rem;
 }
 
+.nav {
+  font-size: 1.8rem;
+}
+
 .nav__item {
   display: inline-block;
   margin-right: 1.8rem;
@@ -393,6 +406,8 @@ h2,
 }
 
 .button_transpt {
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
   background: transparent;
 }
 
@@ -411,7 +426,7 @@ h2,
   height: 35px;
   background: transparent;
   color: rgba(221, 221, 221, 0.5);
-  font-size: 1.4rem !important;
+  font-size: 14px !important;
 }
 
 .search-form__button {
@@ -425,8 +440,8 @@ h2,
 .tip-button {
   width: 36px;
   height: 36px;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 2.2rem;
+  line-height: 2.4rem;
   color: #FFFFFF;
   background: transparent;
   border: 2px solid #B8B8B8;
@@ -531,6 +546,9 @@ h2,
 
 .is-paid {
   color: #77C628 !important;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.105em;
 }
 
 .content {
@@ -558,7 +576,7 @@ h2,
 }
 
 .table {
-  width: 87.98%;
+  width: 89.66%;
 }
 
 .table__row {
@@ -569,8 +587,9 @@ h2,
 .table__row:last-child {
   border: none;
   font-family: "Helvetica", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .table__row:last-child td:last-child {
@@ -579,63 +598,33 @@ h2,
 
 .table__header {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.8rem;
+  width: 12.25%;
 }
 
 .table__header:nth-child(1) {
-  width: 45%;
+  width: 42%;
   text-align: left;
 }
 
-.table__header:nth-child(2) {
-  width: 11%;
-}
-
-.table__header:nth-child(3) {
-  width: 11%;
-}
-
-.table__header:nth-child(4) {
-  width: 11%;
-}
-
-.table__header:nth-child(5) {
-  width: 11%;
-}
-
-.table__header:nth-child(6) {
-  width: 11%;
+.table__header:last-child {
+  width: 9%;
 }
 
 .table__data {
   text-align: center;
   color: #C4C4C4;
+  width: 12.25%;
 }
 
 .table__data:nth-child(1) {
   padding-left: 20px;
-  width: 45%;
+  width: 42%;
   text-align: left;
 }
 
-.table__data:nth-child(2) {
-  width: 11%;
-}
-
-.table__data:nth-child(3) {
-  width: 11%;
-}
-
-.table__data:nth-child(4) {
-  width: 11%;
-}
-
-.table__data:nth-child(5) {
-  width: 11%;
-}
-
-.table__data:nth-child(6) {
-  width: 11%;
+.table__data:last-child {
+  width: 7%;
 }
 
 /*
@@ -649,6 +638,7 @@ h2,
 .footer__inner {
   margin-top: 30rem;
   margin-left: 22px;
+  margin-right: 22px;
   padding-top: 3.2rem;
   padding-bottom: 6rem;
   border-top: 1px solid #B2B2B2;
@@ -657,8 +647,6 @@ h2,
 .footer__top {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
 }
 
 .footer__item {
@@ -671,15 +659,10 @@ h2,
 
 .footer__item:nth-child(1) {
   display: flex;
-  padding-left: 35px;
 }
 
 .footer__logo {
   margin-right: 3.4rem;
-}
-
-.footer__copyright {
-  padding-left: 22px;
 }
 
 .feedback-info {
@@ -714,7 +697,7 @@ h2,
 
 .social-block__title {
   margin-bottom: 15px;
-  font-size: 16px;
+  font-size: 1.6rem;
   text-transform: uppercase;
   text-align: center;
 }
@@ -738,18 +721,19 @@ h2,
 }
 
 .copyright {
-  height: 31px;
-  line-height: 31px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background: #131212;
   text-align: center;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .copyright span {
   margin-right: 13px;
   position: relative;
-  top: 2px;
-  font-size: 20px;
+  top: 3px;
+  font-size: 25px;
 }
 
 /*

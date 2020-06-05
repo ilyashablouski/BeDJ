@@ -9,6 +9,16 @@
 // Fonts
 @font-face {
   font-family: "Helvetica";
+  src: url("../fonts/Helvetica/HelveticaLight.woff2") format("woff2"),
+    url("../fonts/Helvetica/HelveticaLight.woff") format("woff");
+
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
   src: url("../fonts/Helvetica/HelveticaRegular.woff2") format("woff2"),
     url("../fonts/Helvetica/HelveticaRegular.woff") format("woff");
 
@@ -19,13 +29,14 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url("../fonts/Helvetica/HelveticaBold.woff2") format("woff2"),
-    url("../fonts/Helvetica/HelveticaBold.woff") format("woff");
+  src: url("../fonts/Helvetica/HelveticaMedium.woff2") format("woff2"),
+    url("../fonts/Helvetica/HelveticaMedium.woff") format("woff");
 
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 
 @font-face {
   font-family: "PostNoBillsJaffna";
@@ -86,7 +97,7 @@ body {
 
 body {
   font-family: "Helvetica", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
@@ -209,21 +220,22 @@ h1,
 .h1 {
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-size: 4.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: @whiteText;
 }
 
 h2,
 .h2 {
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
-  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: 500;
   color: @whiteText;
 }
 
 .text {
   font-family: "Helvetica", Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 300;
   line-height: 1.7rem;
   color: @whiteText;
 }
@@ -279,6 +291,7 @@ h2,
 }
 
 .nav {
+  font-size: 1.8rem;
   &__item {
     display: inline-block;
     margin-right: 1.8rem;
@@ -300,6 +313,8 @@ h2,
   border-radius: 9px;
 
   &_transpt {
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
     background: transparent;
   }
 }
@@ -318,7 +333,7 @@ h2,
     height: 35px;
     background: transparent;
     color: rgba(221, 221, 221, 0.5);
-    font-size: 1.4rem !important;
+    font-size: 14px !important;
   }
 
   &__button {
@@ -333,8 +348,8 @@ h2,
 .tip-button {
   width: 36px;
   height: 36px;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 2.2rem;
+  line-height: 2.4rem;
   color: @white;
   background: transparent;
   border: 2px solid #B8B8B8;
@@ -434,6 +449,9 @@ h2,
 
 .is-paid {
   color: #77C628 !important;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.105em;
 }
 
 .content {
@@ -461,7 +479,7 @@ h2,
 }
 
 .table {
-  width: 87.98%;
+  width: 89.66%;
 
   &__row {
     margin-bottom: 13px;
@@ -470,8 +488,9 @@ h2,
     &:last-child {
       border: none;
       font-family: "Helvetica", Arial, sans-serif;
-      font-weight: 600;
-      font-size: 24px;
+      font-weight: 500;
+      font-size: 2.2rem;
+      color: @whiteText;
 
       td:last-child {
         display: none;
@@ -481,62 +500,32 @@ h2,
 
   &__header {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.8rem;
+    width: 12.25%;
 
     &:nth-child(1) {
-      width: 45%;
+      width: 42%;
       text-align: left;
     }
 
-    &:nth-child(2) {
-      width: 11%;
-    }
-
-    &:nth-child(3) {
-      width: 11%;
-    }
-
-    &:nth-child(4) {
-      width: 11%;
-    }
-
-    &:nth-child(5) {
-      width: 11%;
-    }
-
-    &:nth-child(6) {
-      width: 11%;
+    &:last-child {
+      width: 9%;
     }
   }
 
   &__data {
     text-align: center;
     color: @greyText;
+    width: 12.25%;
 
     &:nth-child(1) {
       padding-left: 20px;
-      width: 45%;
+      width: 42%;
       text-align: left;
     }
 
-    &:nth-child(2) {
-      width: 11%;
-    }
-
-    &:nth-child(3) {
-      width: 11%;
-    }
-
-    &:nth-child(4) {
-      width: 11%;
-    }
-
-    &:nth-child(5) {
-      width: 11%;
-    }
-
-    &:nth-child(6) {
-      width: 11%;
+    &:last-child {
+      width: 7%;
     }
   }
 }
@@ -552,13 +541,15 @@ h2,
   &__inner {
     margin-top: 30rem;
     margin-left: 22px;
+    margin-right: 22px;
     padding-top: 3.2rem;
     padding-bottom: 6rem;
     border-top: 1px solid #B2B2B2;
   }
 
   &__top {
-    .row-flex();
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -568,17 +559,11 @@ h2,
 
     &:nth-child(1) {
       display: flex;
-      padding-left: 35px;
     }
   }
 
   &__logo {
     margin-right: 3.4rem;
-  }
-
-  &__copyright {
-    padding-left: 22px;
-
   }
 }
 
@@ -602,6 +587,7 @@ h2,
 
 .social-block {
   display: block;
+
   &__item {
     display: inline-block;
   }
@@ -612,7 +598,7 @@ h2,
 
   &__title {
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     text-align: center;
   }
@@ -637,19 +623,21 @@ h2,
 }
 
 .copyright {
-  height: 31px;
-  line-height: 31px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background: @blackLight;
   text-align: center;
   font-size: 14px;
+  text-transform: uppercase;
 
   span {
     margin-right: 13px;
     position: relative;
-    top: 2px;
-    font-size: 20px;
+    top: 3px;
+    font-size: 25px;
   }
 }
+
 /*
  * ! 4. Footer
 **/
