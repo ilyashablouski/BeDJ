@@ -178,7 +178,7 @@ input[type="submit"] textarea {
   ;
 }
 
-input[type=text]::-ms-clear {
+input[type=text]::-ms-clear, input[type=search]::-ms-clear {
   display: none;
   width: 0;
   height: 0;
@@ -253,6 +253,14 @@ h2,
 /*
  * 1. Header
 **/
+.logo__image-sm {
+  display: block;
+  width: 43px;
+  height: 39px;
+  background: url('../images/logo-sm@x1.5.png') no-repeat;
+  background-size: contain;
+}
+
 .header {
   background: @black;
 
@@ -291,6 +299,7 @@ h2,
 
 .nav {
   font-size: 1.8rem;
+
   &__item {
     display: inline-block;
     margin-right: 1.8rem;
@@ -536,6 +545,35 @@ h2,
 /*
  * 4. Footer
 **/
+.logo__image-lg {
+  display: block;
+  width: 54px;
+  height: 49px;
+  background: url('../images/logo-lg@x1.5.png') no-repeat;
+  background-size: contain;
+}
+
+.social-block__icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+
+  &_facebook {
+    background: url('../images/facebook-icon@x1.5.png') no-repeat;
+    background-size: contain;
+  }
+
+  &_instagram {
+    background: url('../images/instagram-icon@x1.5.png') no-repeat;
+    background-size: contain;
+  }
+
+  &_twitter {
+    background: url('../images/twitter-icon@x1.5.png') no-repeat;
+    background-size: contain;
+  }
+}
+
 .footer {
   &__inner {
     margin-top: 30rem;

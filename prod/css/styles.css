@@ -275,7 +275,8 @@ input[type="submit"] textarea:focus:-ms-input-placeholder {
   color: rgba(221, 221, 221, 0.8);
 }
 
-input[type=text]::-ms-clear {
+input[type=text]::-ms-clear,
+input[type=search]::-ms-clear {
   display: none;
   width: 0;
   height: 0;
@@ -341,6 +342,14 @@ h2,
 /*
  * 1. Header
 **/
+
+.logo__image-sm {
+  display: block;
+  width: 43px;
+  height: 39px;
+  background: url('../images/logo-sm@x1.5.png') no-repeat;
+  background-size: contain;
+}
 
 .header {
   background: #080808;
@@ -633,6 +642,35 @@ h2,
 /*
  * 4. Footer
 **/
+
+.logo__image-lg {
+  display: block;
+  width: 54px;
+  height: 49px;
+  background: url('../images/logo-lg@x1.5.png') no-repeat;
+  background-size: contain;
+}
+
+.social-block__icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.social-block__icon_facebook {
+  background: url('../images/facebook-icon@x1.5.png') no-repeat;
+  background-size: contain;
+}
+
+.social-block__icon_instagram {
+  background: url('../images/instagram-icon@x1.5.png') no-repeat;
+  background-size: contain;
+}
+
+.social-block__icon_twitter {
+  background: url('../images/twitter-icon@x1.5.png') no-repeat;
+  background-size: contain;
+}
 
 .footer__inner {
   margin-top: 30rem;
