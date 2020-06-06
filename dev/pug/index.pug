@@ -31,13 +31,13 @@ block content
     .content__inner
       h1.h1.content__h1 Sales
       p.text On this page you can track homework sales and money from them for a specific period of time
-      table.table
-        tr.table__row
-          th.table__header Homework
-          th.table__header Initial cost
-          th.table__header Profit per unit
-          th.table__header Times sold
-          th.table__header Total profit
-          th.table__header Status
+      .table
+        .table__row
+          .table__header Homework
+          .table__header Initial cost
+          .table__header Profit per unit
+          .table__header Times sold
+          .table__header Total profit
+          .table__header Status
         +createTableItem(tableDataArray)
     include modules/footer.pug

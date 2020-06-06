@@ -267,7 +267,6 @@ h2,
     height: 53px;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   &__nav {
@@ -492,7 +491,7 @@ h2,
       font-size: 2.2rem;
       color: @whiteText;
 
-      td:last-child {
+      .table__data:last-child {
         display: none;
       }
     }
@@ -627,8 +626,10 @@ h2,
 }
 
 .copyright {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 31px;
   background: @blackLight;
   text-align: center;
   font-size: 14px;
@@ -636,8 +637,7 @@ h2,
 
   span {
     margin-right: 13px;
-    position: relative;
-    top: 3px;
+    display: inline-block;
     font-size: 25px;
   }
 }

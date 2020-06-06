@@ -52,13 +52,13 @@ mixin productBlock(blocksQuantity)
 
 mixin createTableItem(tableDataArray)
   each obj, key in tableDataArray
-    tr.table__row
-      td.table__data= obj.name
-      td.table__data= obj.cost
-      td.table__data= obj.profit
-      td.table__data= obj.time
-      td.table__data= obj.total
-      td.table__data(class=obj.status ? 'is-paid' : '')= obj.status ? 'PAID' : 'not paid'
+    .table__row
+      .table__data= obj.name
+      .table__data= obj.cost
+      .table__data= obj.profit
+      .table__data= obj.time
+      .table__data= obj.total
+      .table__data(class=obj.status ? 'is-paid' : '')= obj.status ? 'PAID' : 'not paid'
 
 
 //-
