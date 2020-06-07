@@ -7,15 +7,70 @@ block variables
   - var linkMinCss = 'css/styles.min.css';
   -
     var tableDataArray = [
-      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '500$', profit: '470$', time: '15', total: '2 470$', status: true},
-      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '600$', profit: '560$', time: '56', total: '3 560$', status: true},
-      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '550$', profit: '510$', time: '34', total: '1 510$', status: true},
-      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '700$', profit: '650$', time: '18', total: '1 650$', status: true},
-      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '200$', profit: '180$', time: '19', total: '2 180$', status: true},
-      {name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations', cost: '450$', profit: '410$', time: '25', total: '3 410$', status: false},
-      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '500$', profit: '470$', time: '15', total: '2 470$', status: false},
-      {name: 'Universal Audio - Drums - Neve Preamp (Saturated)', cost: '300$', profit: '270$', time: '25', total: '2 270$', status: false},
-      {name: 'Left to pay', cost: '', profit: '', time: '225', total: '20 300$'}
+      {
+        name: 'Universal Audio - Drums - Neve Preamp (Saturated)',
+        cost: '500$',
+        profit: '470$',
+        time: '15',
+        total: '2 470$',
+        status: true
+      },
+      {
+        name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations',
+        cost: '600$',
+        profit: '560$',
+        time: '56',
+        total: '3 560$',
+        status: true
+      },
+      {
+        name: 'Universal Audio - Drums - Neve Preamp (Saturated)',
+        cost: '550$',
+        profit: '510$',
+        time: '34',
+        total: '1 510$',
+        status: true
+      },
+      {
+        name: 'Universal Audio - Drums - Neve Preamp (Saturated)',
+        cost: '700$',
+        profit: '650$',
+        time: '18',
+        total: '1 650$',
+        status: true
+      },
+      {
+        name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations',
+        cost: '200$',
+        profit: '180$',
+        time: '19',
+        total: '2 180$',
+        status: true
+      },
+      {
+        name: 'Waves Jamie Jones Re-edit - Jamie Jones - Hot Creations',
+        cost: '450$',
+        profit: '410$',
+        time: '25',
+        total: '3 410$',
+        status: false
+      },
+      {
+        name: 'Universal Audio - Drums - Neve Preamp (Saturated)',
+        cost: '500$',
+        profit: '470$',
+        time: '15',
+        total: '2 470$',
+        status: false
+      },
+      {
+        name: 'Universal Audio - Drums - Neve Preamp (Saturated)',
+        cost: '300$',
+        profit: '270$',
+        time: '25',
+        total: '2 270$',
+        status: false
+      }
     ];
 
 block meta
@@ -31,13 +86,29 @@ block content
     .content__inner
       h1.h1.content__h1 Sales
       p.text On this page you can track homework sales and money from them for a specific period of time
-      .table
-        .table__row
-          .table__header Homework
-          .table__header Initial cost
-          .table__header Profit per unit
-          .table__header Times sold
-          .table__header Total profit
-          .table__header Status
-        +createTableItem(tableDataArray)
+      .content__table
+        .table
+          .table__row
+            .table__header Homework
+            .table__header Initial cost
+            .table__header Profit per unit
+            .table__header Times sold
+            .table__header Total profit
+            .table__header Status
+          +createTableItem(tableDataArray)
+          .table__row.table__row_sub
+            .table__data Left to pay
+            .table__data
+            .table__data
+            .table__data 225
+            .table__data 20 300$
+            .table__data
+        .brackets.content__brackets
+          .brackets__inner
+            .brackets__bracket.brackets__bracket_paid
+            .brackets__text(style='max-width: 66px') Were paid on February 22
+          .brackets__inner
+            .brackets__bracket.brackets__bracket_not-paid
+            .brackets__text(style='max-width: 83px') Waiting for payment
+
     include modules/footer.pug

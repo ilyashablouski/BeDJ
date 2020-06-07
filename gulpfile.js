@@ -1,7 +1,15 @@
 // Plugins
-const {parallel, series, watch, src, dest} = require('gulp');
+const {
+  parallel,
+  series,
+  watch,
+  src,
+  dest,
+} = require('gulp');
 const pug = require('gulp-pug');
 const less = require('gulp-less');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 const gcmq = require('gulp-group-css-media-queries');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
@@ -22,11 +30,11 @@ const config = {
     watch: 'less/**/*.less',
     dest: './prod/css',
   },
-  // js: {
-  //   src: 'js/+(common).js',
-  //   watch: 'js/**/*.js',
-  //   prod: 'js/prod/',
-  // },
+  js: {
+    src: 'js/+(common).mjs',
+    watch: 'js/**/*.mjs',
+    dest: './prod/js',
+  },
 };
 
 /**
@@ -66,6 +74,24 @@ function css() {
 }
 
 /**
+ * Save js to prod directory
+ *
+ * @return {string} Return file's paths
+ */
+function js() {
+  return src(config.root + config.js.src)
+      .pipe(dest(config.js.dest))
+      .pipe(babel())
+      .pipe(uglify({
+        toplevel: true,
+      }))
+      .pipe(rename({
+        extname: '.js',
+      }))
+      .pipe(dest(config.js.dest));
+}
+
+/**
  * Initialize smart-grid library
  *
  * @param {*} done End async function
@@ -101,9 +127,9 @@ exports.html = html;
 exports.css = css;
 exports.grid = grid;
 // Build final bundle from pug, less, js
-exports.build = parallel(html, css);
+exports.build = parallel(html, css, js);
 // Watch changes from pug, less, js
-exports.watch = series(parallel(html, css), livereload,
+exports.watch = series(parallel(html, css, js), livereload,
     function() {
       watch(config.root + config.pug.watch, series(html, function(done) {
         browserSync.reload();
@@ -112,4 +138,10 @@ exports.watch = series(parallel(html, css), livereload,
       }));
 
       watch(config.root + config.css.watch, css);
+
+      watch(config.root + config.js.watch, series(js, function(done) {
+        browserSync.reload();
+
+        done();
+      }));
     });
