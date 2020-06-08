@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Helvetica";
   src: url("../fonts/Helvetica/HelveticaLight.woff2") format("woff2"),
-  url("../fonts/Helvetica/HelveticaLight.woff") format("woff");
+    url("../fonts/Helvetica/HelveticaLight.woff") format("woff");
 
   font-weight: 300;
   font-style: normal;
@@ -20,7 +20,7 @@
 @font-face {
   font-family: "Helvetica";
   src: url("../fonts/Helvetica/HelveticaRegular.woff2") format("woff2"),
-  url("../fonts/Helvetica/HelveticaRegular.woff") format("woff");
+    url("../fonts/Helvetica/HelveticaRegular.woff") format("woff");
 
   font-weight: 400;
   font-style: normal;
@@ -30,7 +30,7 @@
 @font-face {
   font-family: "Helvetica";
   src: url("../fonts/Helvetica/HelveticaMedium.woff2") format("woff2"),
-  url("../fonts/Helvetica/HelveticaMedium.woff") format("woff");
+    url("../fonts/Helvetica/HelveticaMedium.woff") format("woff");
 
   font-weight: 500;
   font-style: normal;
@@ -41,7 +41,7 @@
 @font-face {
   font-family: "PostNoBillsJaffna";
   src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff2") format("woff2"),
-  url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff") format("woff");
+    url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -50,7 +50,7 @@
 @font-face {
   font-family: "PostNoBillsJaffna";
   src: url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-Medium.woff2") format("woff2"),
-  url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-Medium.woff") format("woff");
+    url("../fonts/PostNoBillsJaffna/PostNoBillsJaffna-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -156,25 +156,30 @@ input[type="submit"] textarea {
 
 ::-webkit-input-placeholder {
   /* WebKit browsers */
-  color: rgba(221, 221, 221, 0.5);;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: rgba(221, 221, 221, 0.5);;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: rgba(221, 221, 221, 0.5);;
+  color: rgba(221, 221, 221, 0.5);
+  ;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10+ */
-  color: rgba(221, 221, 221, 0.8);;
+  color: rgba(221, 221, 221, 0.8);
+  ;
 }
 
-input[type=text]::-ms-clear, input[type=search]::-ms-clear {
+input[type=text]::-ms-clear,
+input[type=search]::-ms-clear {
   display: none;
   width: 0;
   height: 0;
@@ -199,9 +204,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 img {
-  .ie10({
-    width: 100%;
-  }
+  .ie10( {
+      width: 100%;
+    }
+
   );
 }
 
@@ -497,6 +503,7 @@ h2,
     text-align: center;
     font-size: 1.8rem;
     width: 12.25%;
+    white-space: nowrap;
 
     &:nth-child(1) {
       width: 42%;
@@ -538,7 +545,7 @@ h2,
 }
 
 .brackets {
-  transform: translateY(3%);
+  margin-top: 2rem;
 
   &__inner {
     display: flex;
@@ -554,12 +561,10 @@ h2,
 
     &_paid {
       margin-bottom: 3px;
-      height: 340px;
     }
 
     &_not-paid {
       margin-top: 3px;
-      height: 204px;
     }
   }
 

@@ -58,7 +58,7 @@ mixin createTableItem(tableDataArray)
       .table__data= obj.profit
       .table__data= obj.time
       .table__data= obj.total
-      .table__data(class=obj.status ? 'is-paid' : '')= obj.status ? 'PAID' : 'not paid'
+      .table__data(class=obj.status ? 'is-paid' : 'is-not-paid')= obj.status ? 'PAID' : 'not paid'
 
 
 //-

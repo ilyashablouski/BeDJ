@@ -600,6 +600,7 @@ h2,
   text-align: center;
   font-size: 1.8rem;
   width: 12.25%;
+  white-space: nowrap;
 }
 
 .table__header:nth-child(1) {
@@ -640,7 +641,7 @@ h2,
 }
 
 .brackets {
-  transform: translateY(3%);
+  margin-top: 2rem;
 }
 
 .brackets__inner {
@@ -658,12 +659,10 @@ h2,
 
 .brackets__bracket_paid {
   margin-bottom: 3px;
-  height: 340px;
 }
 
 .brackets__bracket_not-paid {
   margin-top: 3px;
-  height: 204px;
 }
 
 .brackets__text {
