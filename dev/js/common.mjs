@@ -4,6 +4,9 @@ const elemNotPaidArray = document.querySelectorAll('.is-not-paid');
 const bracketPaid = document.querySelector('.brackets__bracket_paid');
 const bracketNotPaid = document.querySelector('.brackets__bracket_not-paid');
 
+const sidebarArray = document.querySelectorAll('.js-nav-button');
+const elemSidebar = document.querySelector('.sidebar');
+
 
 // Define handler's functions
 /**
@@ -30,10 +33,34 @@ function setBracketHeight() {
   bracketNotPaid.style.height = sumHeightNotPaid + 'px';
 };
 
+/**
+ * Toogle active sidebar button
+ *
+ * @param {EventTarget} target
+ */
+function toogleActiveButton(target) {
+  for (const element of sidebarArray) {
+    element.classList.remove('js-nav-button_active');
+  }
+
+  target.classList.add('js-nav-button_active');
+}
+
 
 // Handler's call
 window.addEventListener('resize', setBracketHeight);
 
 document.addEventListener('DOMContentLoaded', () => {
   setBracketHeight();
+
+  /**
+   * Dilocation and call events in sidebar
+   */
+  elemSidebar.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.classList.contains('js-nav-button')) {
+      toogleActiveButton(target);
+    }
+  });
 });

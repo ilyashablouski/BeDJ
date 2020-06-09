@@ -406,6 +406,10 @@ h2,
   color: #FFFFFF;
 }
 
+.nav__link:hover {
+  color: #FFD707;
+}
+
 .button {
   padding: 7px 20px;
   display: inline-block;
@@ -456,6 +460,7 @@ h2,
   background: transparent;
   border: 2px solid #B8B8B8;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .user {
@@ -476,6 +481,9 @@ h2,
   min-width: 119.25px;
   font-family: "PostNoBillsJaffna", Arial, sans-serif;
   font-weight: 500;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 .user__link_dropdown .user__text {
@@ -493,6 +501,11 @@ h2,
   vertical-align: middle;
   font-size: 2rem;
   overflow: hidden;
+}
+
+.user:hover .user__link_dropdown {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*
@@ -542,7 +555,7 @@ h2,
   width: 100%;
 }
 
-.sidebar-nav__link_active {
+.js-nav-button_active {
   background: #6A973E;
 }
 
@@ -742,6 +755,15 @@ h2,
   text-align: center;
 }
 
+.feedback-info__link {
+  border-bottom: 0.5px solid #D4D4D4;
+}
+
+.feedback-info__link:hover {
+  color: #FFD707;
+  border-bottom: 0.5px solid #FFD707;
+}
+
 .feedback-info span {
   display: block;
   margin-bottom: 15px;
@@ -749,7 +771,6 @@ h2,
 
 .feedback-info span:last-child {
   display: inline-block;
-  border-bottom: 0.5px solid #D4D4D4;
 }
 
 .feedback-info span a {

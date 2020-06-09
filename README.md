@@ -1,2 +1,2 @@
 # DJ
-Training project using Pug, less, Gulp, Webpack, Native JS
+Training project using Pug, less, Gulp, Native JS.
